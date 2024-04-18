@@ -10,7 +10,7 @@ std::string getSticker() {
 	auto value = Mod::get()->getSettingValue<int64_t>("StickerSlider");
 	switch (value) {
 		case 1:
-			return "ishtar_onyx_spicy.png"_spr;
+			return "essex_dark.png"_spr;
 		case 2:
 			return "kanna_dark_secondary.png"_spr;
 		case 3:
@@ -26,7 +26,7 @@ std::string getSticker() {
 		case 8:
 			return "rias_dark.png"_spr;
 		case 9:
-			return "rias_onyx_spicy.png"_spr;
+			return "yuno_dark.png"_spr;
 		case 10:
 			return "ryuko.png"_spr;
 		default:
