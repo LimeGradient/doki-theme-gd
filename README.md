@@ -1,3 +1,2 @@
-# doki-theme-gd
-
-This is where she makes a mod.
+# Doki Theme
+This mod adds anime characters to your Geometry Dash!

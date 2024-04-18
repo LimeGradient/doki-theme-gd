@@ -1,3 +1,2 @@
-# Template Mod
-
-Edit about.md to change this
+# Doki Theme
+This mod adds anime characters to your Geometry Dash!
