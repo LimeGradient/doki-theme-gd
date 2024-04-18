@@ -16,5 +16,17 @@
 				"resources/*.png"
 			]
 		}
+	},
+	"settings": {
+		"StickerSlider": {
+			"name": "Sticker",
+			"type": "int",
+			"default": 1,
+			"min": 1,
+			"max": 10,
+			"control": {
+				"slider": true
+			}
+		}
 	}
 }
