@@ -10,6 +10,8 @@ using namespace geode::prelude;
 
 $on_mod(Loaded) {
 	auto path = (Mod::get()->getConfigDir() / ("custom.txt")).string();
+	auto custom = (Mod::get()->getConfigDir() / ("custom.png")).string();
+	auto customBG = (Mod::get()->getConfigDir() / ("customBG.png")).string();
 	if (!std::filesystem::exists(path)) {
 		std::string content = R"(Hey there!
 Please supply your own images
@@ -156,7 +158,10 @@ class $modify(LevelEditorLayer) {
 			log::info("customBG: {}", (Mod::get()->getConfigDir() / "customBG.png").string().c_str());
 			if (Mod::get()->getSettingValue<int64_t>("BackgroundSlider") == 19 && std::filesystem::exists((Mod::get()->getConfigDir() / "customBG.png").string())) {
 				auto customBG = (Mod::get()->getConfigDir() / "customBG.png").string().c_str();
-				sticker->setTexture(CCSprite::create(customBG)->getTexture());
+				auto bgTexture = CCSprite::create(customBG);
+				auto replacement = bgTexture->getTexture();
+				auto theStickerNode = static_cast<CCSprite*>(sticker);
+				theStickerNode->setTexture(replacement);
 			}
 			mainNode->addChild(sticker);
 		}
@@ -199,7 +204,10 @@ class $modify(MenuLayer) {
 		log::info("customSticker: {}", (Mod::get()->getConfigDir() / "custom.png").string().c_str());
 		if (Mod::get()->getSettingValue<int64_t>("StickerSlider") == 11 && std::filesystem::exists((Mod::get()->getConfigDir() / "custom.png").string())) {
 			auto customSticker = (Mod::get()->getConfigDir() / "custom.png").string().c_str();
-			sticker->setTexture(CCSprite::create(customSticker)->getTexture());
+			auto stickerTexture = CCSprite::create(customSticker);
+			auto replacement = stickerTexture->getTexture();
+			auto theStickerNode = static_cast<CCSprite*>(sticker);
+			theStickerNode->setTexture(replacement);
 		}
 
 		stickerNode->addChild(sticker);
