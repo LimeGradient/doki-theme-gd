@@ -155,7 +155,7 @@ class $modify(LevelEditorLayer) {
 			sticker->setZOrder(-60);
 			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("BackgroundSlider") * 5);
 			sticker->setID("doki-background"_spr);
-			log::info("customBG: {}", (Mod::get()->getConfigDir() / "customBG.png").string().c_str());
+			#ifndef GEODE_IS_MACOS
 			if (Mod::get()->getSettingValue<int64_t>("BackgroundSlider") == 19 && std::filesystem::exists((Mod::get()->getConfigDir() / "customBG.png").string())) {
 				auto customBG = (Mod::get()->getConfigDir() / "customBG.png").string().c_str();
 				auto bgTexture = CCSprite::create(customBG);
@@ -163,6 +163,7 @@ class $modify(LevelEditorLayer) {
 				auto theStickerNode = static_cast<CCSprite*>(sticker);
 				theStickerNode->setTexture(replacement);
 			}
+			#endif
 			mainNode->addChild(sticker);
 		}
 		
@@ -201,7 +202,7 @@ class $modify(MenuLayer) {
 		sticker->setID("doki-sticker"_spr);
 		sticker->setPosition({director->getWinSize().width * (Mod::get()->getSettingValue<int64_t>("xPosPercent") / 100.f), director->getWinSize().height * (Mod::get()->getSettingValue<int64_t>("yPosPercent") / 100.f)});
 		sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
-		log::info("customSticker: {}", (Mod::get()->getConfigDir() / "custom.png").string().c_str());
+		#ifndef GEODE_IS_MACOS
 		if (Mod::get()->getSettingValue<int64_t>("StickerSlider") == 11 && std::filesystem::exists((Mod::get()->getConfigDir() / "custom.png").string())) {
 			auto customSticker = (Mod::get()->getConfigDir() / "custom.png").string().c_str();
 			auto stickerTexture = CCSprite::create(customSticker);
@@ -209,6 +210,7 @@ class $modify(MenuLayer) {
 			auto theStickerNode = static_cast<CCSprite*>(sticker);
 			theStickerNode->setTexture(replacement);
 		}
+		#endif
 
 		stickerNode->addChild(sticker);
 		menu->addChild(stickerNode);
