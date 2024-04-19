@@ -66,33 +66,7 @@
 			"max": 100,
 			"control": {
 				"slider": true
-			},
-			"description": "Controls transparency of Sticker."
-		},
-		"ShowStickerInLevel": {
-			"name": "Show Sticker in Level",
-			"type": "bool",
-			"default": true,
-			"description": "Show the sticker in level"
-		},
-		"ShowStickerInEditor": {
-			"name": "Show Sticker in Editor",
-			"type": "bool",
-			"default": true,
-			"description": "Show the Sticker in the Editor"
-		},
-		"ShowBackgroundInEditor": {
-			"name": "Show Background in Editor",
-			"type": "bool",
-			"default": true,
-			"description": "Show the Background in the Editor"
+			}
 		}
-	},
-	"dependencies": [
-		{
-			"id": "geode.node-ids",
-			"importance": "required",
-			"version": ">=1.9.1"
-		}
-	]
+	}
 }
