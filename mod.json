@@ -21,7 +21,7 @@
 	"settings": {
 		"StickerSlider": {
 			"name": "Sticker",
-			"description": "Choose a sticker from here. Stickers include:\n0: Fully transparent sticker (visually a softtoggle).\n1:Essex.\n2: Sleepy Kanna.\n3: Kanna.\n4: Mai.\n5: Ram.\n6:Rem.\n7: Rias.\n8: Ryuko.\n9: Yuno.\n10: Custom image named <cl>custom.png</c>. Nothing too large, please. It's for your own good.",
+			"description": "Choose a sticker from here. Stickers include:\n0: Fully transparent sticker (visually a softtoggle).\n1: Essex.\n2: Sleepy Kanna.\n3: Kanna.\n4: Mai.\n5: Ram.\n6: Rem.\n7: Rias.\n8: Yuno.\n9: Ryuko.\n10: Nagatoro.\n11: Custom image named <cl>custom.png</c>. Nothing too large, please. It's for your own good.",
 			"type": "int",
 			"default": 1,
 			"min": 0,
@@ -35,11 +35,11 @@
 		},
 		"BackgroundSlider": {
 			"name": "Background (Editor Only)",
-			"description": "Controls what background you will have.",
+			"description": "Choose a level editor background from here. Backgrounds include:\n0: Fully transparent background (visually a softtoggle).\n1: Aqua.\n2: Astolfo.\n3: Asuna.\n4: Azuki.\n5: Beatrice.\n6: Cinnamon.\n7: Coconut.\n8: Darkness.\n9: Echidna.\n10: Gray.\n11: Sleepy Kanna.\n12: Kanna.\n13: Mai.\n14: Ram.\n15: Rem.\n16: Rias.\n17: Yuno.\n18: Ryuko.\n19: Custom image named <cl>customBG.png</c>. Nothing too large, please. It's for your own good.",
 			"type": "int",
 			"default": 1,
-			"min": 1,
-			"max": 10,
+			"min": 0,
+			"max": 19,
 			"control": {
 				"slider": true,
 				"input": false,
@@ -66,7 +66,26 @@
 			"max": 100,
 			"control": {
 				"slider": true
-			}
+			},
+			"description": "Controls transparency of Sticker."
+		},
+		"ShowStickerInLevel": {
+			"name": "Show Sticker in Level",
+			"type": "bool",
+			"default": true,
+			"description": "Show the sticker in level"
+		},
+		"ShowStickerInEditor": {
+			"name": "Show Sticker in Editor",
+			"type": "bool",
+			"default": true,
+			"description": "Show the Sticker in the Editor"
+		},
+		"ShowBackgroundInEditor": {
+			"name": "Show Background in Editor",
+			"type": "bool",
+			"default": true,
+			"description": "Show the Background in the Editor"
 		}
 	}
 }

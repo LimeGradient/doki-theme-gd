@@ -35,6 +35,28 @@ std::string getBackground() {
 			return "echidna_dark.png"_spr;
 		case 10:
 			return "gray_dark.png"_spr;
+		case 11:
+			return "kanna_dark_secondary.png"_spr;
+		case 12:
+			return "kanna_dark.png"_spr;
+		case 13:
+			return "mai_dark.png"_spr;
+		case 14:
+			return "ram.png"_spr;
+		case 15:
+			return "rem.png"_spr;
+		case 16:
+			return "rias_dark.png"_spr;
+		case 17:
+			return "yuno_dark.png"_spr;
+		case 18:
+			return "ryuko.png"_spr;
+		case 19:
+			if (!std::filesystem::exists((Mod::get()->getConfigDir() / "customBG.png").string())) {
+				return "blank.png"_spr;
+			} else {
+				return (Mod::get()->getConfigDir() / "customBG.png").string() + ""_spr;
+			}
 		default:
 			return "blank.png"_spr;
 	}
@@ -44,23 +66,25 @@ std::string getSticker() {
 	auto value = Mod::get()->getSettingValue<int64_t>("StickerSlider");
 	switch (value) {
 		case 1:
-			return "kanna_dark_secondary.png"_spr;
+			return "essex_dark.png"_spr;
 		case 2:
 			return "kanna_dark_secondary.png"_spr;
 		case 3:
 			return "kanna_dark.png"_spr;
 		case 4:
-			return "mai_dark_spicy.png"_spr;
+			return "mai_dark.png"_spr;
 		case 5:
 			return "ram.png"_spr;
 		case 6:
 			return "rem.png"_spr;
 		case 7:
 			return "rias_dark.png"_spr;
-		case 9:
+		case 8:
 			return "yuno_dark.png"_spr;
-		case 10:
+		case 9:
 			return "ryuko.png"_spr;
+		case 10:
+			return "nagatoro_dark.png"_spr;
 		case 11:
 			if (!std::filesystem::exists((Mod::get()->getConfigDir() / "custom.png").string())) {
 				return "blank.png"_spr;
@@ -105,39 +129,6 @@ class $modify(EditorPauseLayer) {
 	}
 };
 
-class $modify(EditorPauseLayer) {
-	void onExitEditor(CCObject* sender) {
-		EditorPauseLayer::onExitEditor(sender);
-		if (auto dokiTheme = getDoki()) {
-			dokiTheme->setVisible(true);
-		}
-	}
-	void onExitNoSave(CCObject* sender) {
-		if (auto dokiTheme = getDoki()) {
-			dokiTheme->setVisible(true);
-		}
-		EditorPauseLayer::onExitNoSave(sender);
-	}
-	void onSaveAndExit(CCObject* sender) {
-		if (auto dokiTheme = getDoki()) {
-			dokiTheme->setVisible(true);
-		}
-		EditorPauseLayer::onSaveAndExit(sender);
-	}
-	void onSaveAndPlay(CCObject* sender) {
-		if (auto dokiTheme = getDoki()) {
-			dokiTheme->setVisible(Mod::get()->getSettingValue<bool>("ShowStickerInLevel"));
-		}
-		EditorPauseLayer::onSaveAndPlay(sender);
-	}
-	void onResume(CCObject* sender) {
-		if (auto dokiTheme = getDoki()) {
-			dokiTheme->setVisible(false);
-		}
-		EditorPauseLayer::onResume(sender);
-	}
-};
-
 class $modify(LevelEditorLayer) {
 	bool init(GJGameLevel* p0, bool p1) {
 		if (!LevelEditorLayer::init(p0, p1)) {
@@ -148,7 +139,7 @@ class $modify(LevelEditorLayer) {
 		auto scene = CCScene::get();
 
 		if (!Mod::get()->getSettingValue<bool>("ShowStickerInEditor")) {
-			scene->getChildByID("doki-theme-gd")->setVisible(false);
+			getDoki()->setVisible(false);
 		}
 
 		if (!Mod::get()->getSettingValue<bool>("ShowBackgroundInEditor")) {
@@ -175,41 +166,15 @@ class $modify(LevelEditorLayer) {
 		return true;
 	}
 
-	void onExit() {
-		auto scene = CCScene::get();
+	// void onExit() {
+	// 	auto scene = CCScene::get();
 
-		if (!Mod::get()->getSettingValue<bool>("ShowStickerInEditor")) {
-			scene->getChildByID("doki-theme-gd")->setVisible(true);
-		}
+	// 	if (!Mod::get()->getSettingValue<bool>("ShowStickerInEditor")) {
+	// 		getDoki()->setVisible(true);
+	// 	}
 
-		LevelEditorLayer::onExit();
-	}
-};
-
-class $modify(PlayLayer) {
-	bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
-		if (!PlayLayer::init(level, useReplay, dontCreateObjects)) {
-			return false;
-		}
-
-		auto scene = CCScene::get();
-
-		if (!Mod::get()->getSettingValue<bool>("ShowStickerInLevel")) {
-			 scene->getChildByID("doki-theme-gd")->setVisible(false);
-		}
-
-		return true;
-	}
-
-	void onQuit() {
-		auto scene = CCScene::get();
-
-		if (!Mod::get()->getSettingValue<bool>("ShowStickerInLevel")) {
-			 scene->getChildByID("doki-theme-gd")->setVisible(true);
-		}
-
-		PlayLayer::onQuit();
-	}
+	// 	LevelEditorLayer::onExit();
+	// }
 };
 
 class $modify(MenuLayer) {
@@ -229,6 +194,7 @@ class $modify(MenuLayer) {
 
 		auto menu = CCMenu::create();
 		menu->setID("doki-theme-gd"_spr);
+		menu->setPosition({.0f, .0f});
 
 		auto stickerNode = CCNode::create();
 		stickerNode->setID("sticker-node"_spr);
