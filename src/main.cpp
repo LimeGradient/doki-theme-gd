@@ -145,8 +145,8 @@ class $modify(LevelEditorLayer) {
 			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("BackgroundSlider") * 5);
 			sticker->setID("doki-background"_spr);
 			if (Mod::get()->getSettingValue<int64_t>("BackgroundSlider") == 19 && std::filesystem::exists((Mod::get()->getConfigDir() / "customBG.png").string())) {
-				auto customBG = (Mod::get()->getConfigDir() / "customBG.png").string();
-				sticker->setTexture(CCSprite::create(customBG.c_str())->getTexture());
+				auto customBG = (Mod::get()->getConfigDir() / "customBG.png").string().c_str();
+				sticker->setTexture(CCSprite::create(customBG)->getTexture());
 			}
 			mainNode->addChild(sticker);
 		}
@@ -187,8 +187,8 @@ class $modify(MenuLayer) {
 		sticker->setPosition({director->getWinSize().width * (Mod::get()->getSettingValue<int64_t>("xPosPercent") / 100.f), director->getWinSize().height * (Mod::get()->getSettingValue<int64_t>("yPosPercent") / 100.f)});
 		sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
 		if (Mod::get()->getSettingValue<int64_t>("StickerSlider") == 11 && std::filesystem::exists((Mod::get()->getConfigDir() / "custom.png").string())) {
-			auto customSticker = (Mod::get()->getConfigDir() / "custom.png").string();
-			sticker->setTexture(CCSprite::create(customSticker.c_str())->getTexture());
+			auto customSticker = (Mod::get()->getConfigDir() / "custom.png").string().c_str();
+			sticker->setTexture(CCSprite::create(customSticker)->getTexture());
 		}
 
 		stickerNode->addChild(sticker);
