@@ -8,7 +8,10 @@
 	"version": "v1.1.0",
 	"id": "limegradient.doki-theme-gd",
 	"name": "Doki Theme",
-	"developer": "LimeGradient",
+	"developers": [
+		"LimeGradient",
+		"RayDeeUx"
+	],
 	"description": "",
 	"resources": {
 		"spritesheets": {
