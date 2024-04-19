@@ -85,12 +85,6 @@ std::string getSticker() {
 }
 
 class $modify(EditorPauseLayer) {
-	void onExitEditor(CCObject* sender) {
-		EditorPauseLayer::onExitEditor(sender);
-		if (auto dokiTheme = getDoki()) {
-			dokiTheme->setVisible(true);
-		}
-	}
 	void onExitNoSave(CCObject* sender) {
 		if (auto dokiTheme = getDoki()) {
 			dokiTheme->setVisible(true);
