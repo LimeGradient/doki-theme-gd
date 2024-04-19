@@ -8,6 +8,21 @@
 
 using namespace geode::prelude;
 
+$on_mod(Loaded) {
+	auto path = (Mod::get()->getConfigDir() / ("custom.txt")).string();
+	if (!std::filesystem::exists(path)) {
+		std::string content = R"(Hey there!
+Please supply your own images
+(name them "custom.png" for sticker and "customBG.png" for level editor background)
+then revisit your mod settings
+and tweak the descriptions for the sticker and background slider options
+to your linking
+- LimeGradient
+		)";
+		utils::file::writeString(path, content);
+	}
+}
+
 CCNode* getDoki() {
 	return CCDirector::get()->getRunningScene()->getChildByIDRecursive("doki-theme-gd"_spr);
 }
@@ -138,6 +153,7 @@ class $modify(LevelEditorLayer) {
 			sticker->setZOrder(-60);
 			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("BackgroundSlider") * 5);
 			sticker->setID("doki-background"_spr);
+			log::info("customBG: {}", (Mod::get()->getConfigDir() / "customBG.png").string().c_str());
 			if (Mod::get()->getSettingValue<int64_t>("BackgroundSlider") == 19 && std::filesystem::exists((Mod::get()->getConfigDir() / "customBG.png").string())) {
 				auto customBG = (Mod::get()->getConfigDir() / "customBG.png").string().c_str();
 				sticker->setTexture(CCSprite::create(customBG)->getTexture());
@@ -180,6 +196,7 @@ class $modify(MenuLayer) {
 		sticker->setID("doki-sticker"_spr);
 		sticker->setPosition({director->getWinSize().width * (Mod::get()->getSettingValue<int64_t>("xPosPercent") / 100.f), director->getWinSize().height * (Mod::get()->getSettingValue<int64_t>("yPosPercent") / 100.f)});
 		sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
+		log::info("customSticker: {}", (Mod::get()->getConfigDir() / "custom.png").string().c_str());
 		if (Mod::get()->getSettingValue<int64_t>("StickerSlider") == 11 && std::filesystem::exists((Mod::get()->getConfigDir() / "custom.png").string())) {
 			auto customSticker = (Mod::get()->getConfigDir() / "custom.png").string().c_str();
 			sticker->setTexture(CCSprite::create(customSticker)->getTexture());
