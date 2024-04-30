@@ -54,6 +54,26 @@ std::string getBackground() {
 			return "echidna_dark.png"_spr;
 		case 10:
 			return "gray_dark.png"_spr;
+		case 11:
+			return "rias_dark.png"_spr;
+		case 12:
+			return "rin_dark.png"_spr;
+		case 13:
+			return "ryuko_light.png"_spr;
+		case 14:
+			return "sayori_dark_normal.png"_spr;
+		case 15:
+			return "soma_dark.png"_spr;
+		case 16:
+			return "tohru_light.png"_spr;
+		case 17:
+			return "umi_dark.png"_spr;
+		case 18:
+			return "v8_girls.png"_spr;
+		case 19:
+			return "yuri_joy.png"_spr;
+		case 20:
+			return "zero_two_dark.png"_spr;
 		default:
 			return "blank.png"_spr;
 	}
@@ -136,7 +156,7 @@ class $modify(LevelEditorLayer) {
 			auto sticker = CCSprite::createWithSpriteFrameName(getBackground().c_str());
 	
 			sticker->setPosition(ccp(mainNode->getScaledContentSize().width / 2.f, mainNode->getScaledContentSize().height / 1.5f));
-			sticker->setScale(0.5f);
+			sticker->setContentSize(mainNode->getScaledContentSize()); // fucking idk if this works but look at it
 			sticker->setZOrder(-60);
 			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("TransparencySliderEditor"));
 			sticker->setID("doki-background"_spr);
