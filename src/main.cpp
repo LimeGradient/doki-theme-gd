@@ -54,22 +54,6 @@ std::string getBackground() {
 			return "echidna_dark.png"_spr;
 		case 10:
 			return "gray_dark.png"_spr;
-		case 11:
-			return "kanna_dark_secondary.png"_spr;
-		case 12:
-			return "kanna_dark.png"_spr;
-		case 13:
-			return "mai_dark.png"_spr;
-		case 14:
-			return "ram.png"_spr;
-		case 15:
-			return "rem.png"_spr;
-		case 16:
-			return "rias_dark.png"_spr;
-		case 17:
-			return "yuno_dark.png"_spr;
-		case 18:
-			return "ryuko.png"_spr;
 		default:
 			return "blank.png"_spr;
 	}
@@ -152,10 +136,9 @@ class $modify(LevelEditorLayer) {
 			auto sticker = CCSprite::createWithSpriteFrameName(getBackground().c_str());
 	
 			sticker->setPosition(ccp(mainNode->getScaledContentSize().width / 2.f, mainNode->getScaledContentSize().height / 1.5f));
-			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("TransparencySliderEditor"));
 			sticker->setScale(0.5f);
 			sticker->setZOrder(-60);
-			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("BackgroundSlider") * 5);
+			sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("TransparencySliderEditor"));
 			sticker->setID("doki-background"_spr);
 			/*
 			#ifndef GEODE_IS_MACOS

@@ -1,5 +1,5 @@
 {
-	"geode": "2.0.0-beta.24",
+	"geode": "2.0.0-beta.25",
 	"gd": {
 		"win": "2.204",
 		"android": "2.205",
@@ -12,7 +12,7 @@
 		"LimeGradient",
 		"RayDeeUx"
 	],
-	"description": "",
+	"description": "Add Anime Characters to Geometry Dash!",
 	"resources": {
 		"spritesheets": {
 			"StickerSheet": [
@@ -88,11 +88,11 @@
 		},
 		"BackgroundSlider": {
 			"name": "Background (Editor Only)",
-			"description": "Choose a level editor background from here. Backgrounds include:\n0: Fully transparent background (visually a softtoggle)\n1: Aqua, 2: Astolfo, 3: Asuna, 4: Azuki, 5: Beatrice, 6: Cinnamon, 7: Coconut, 8: Darkness, 9: Echidna\n10: Gray, 11: Sleepy Kanna, 12: Kanna, 13: Mai, 14: Ram, 15: Rem, 16: Rias, 17: Yuno, 18: Ryuko",
+			"description": "Choose a level editor background from here. Backgrounds include:\n0: Fully transparent background (visually a softtoggle)\n1: Aqua, 2: Astolfo, 3: Asuna, 4: Azuki, 5: Beatrice, 6: Cinnamon, 7: Coconut, 8: Darkness, 9: Echidna\n10: Gray",
 			"type": "int",
 			"default": 1,
-			"min": 0,
-			"max": 18,
+			"min": 1,
+			"max": 10,
 			"control": {
 				"slider": true,
 				"input": false,
