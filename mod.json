@@ -5,7 +5,7 @@
 		"android": "2.205",
 		"mac": "2.200"
 	},
-	"version": "v1.1.1",
+	"version": "v1.1.2",
 	"id": "limegradient.doki-theme-gd",
 	"name": "Doki Theme",
 	"developers": [
@@ -28,7 +28,7 @@
 			"type": "int",
 			"default": 1,
 			"min": 0,
-			"max": 10,
+			"max": 11,
 			"control": {
 				"slider": true,
 				"input": false,
