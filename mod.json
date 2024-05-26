@@ -1,11 +1,11 @@
 {
-	"geode": "2.0.0-beta.25",
+	"geode": "2.0.0-beta.27",
 	"gd": {
 		"win": "2.204",
 		"android": "2.205",
 		"mac": "2.200"
 	},
-	"version": "v1.1.2",
+	"version": "v1.1.3",
 	"id": "limegradient.doki-theme-gd",
 	"name": "Doki Theme",
 	"developers": [
@@ -119,7 +119,7 @@
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
-			"version": ">=1.9.1",
+			"version": ">=1.11.0",
 			"importance": "required"
 		}
 	]
