@@ -135,6 +135,7 @@ class $modify(LevelEditorLayer) {
         sticker -> setZOrder(- 60);
         sticker -> setOpacity(Mod::get() -> getSettingValue<int64_t>("TransparencySliderEditor"));
         sticker -> setID("doki-background"_spr);
+        sticker->setAnchorPoint({1.0f, 1.0f});
         /*
         #ifndef GEODE_IS_MACOS
         if (Mod::get()->getSettingValue<int64_t>("BackgroundSlider") == 19 && std::filesystem::exists((Mod::get()->getConfigDir() / "customBG.png").string())) {
