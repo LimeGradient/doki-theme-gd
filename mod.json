@@ -13,6 +13,10 @@
 		"RayDeeUx"
 	],
 	"description": "Add Anime Characters to Geometry Dash!",
+	"links": {
+		"community": "https://discord.gg/44ANAhXz7r",
+		"source": "https://github.com/LimeGradient/doki-theme-gd"
+	},
 	"resources": {
 		"spritesheets": {
 			"StickerSheet": [
