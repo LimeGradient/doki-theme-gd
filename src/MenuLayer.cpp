@@ -41,7 +41,7 @@ class $modify(MenuLayer){
             if (!testSprite) return true; // return if image is malformed/is not valid ccsprite
             
             CCImage* image = new CCImage();
-            image->initWithImageFile(customStickerPath.c_str());
+            image->initWithImageFile(customStickerPath.string().c_str());
 
             CCTexture2D* texture = new CCTexture2D();
             texture->initWithImage(image);
