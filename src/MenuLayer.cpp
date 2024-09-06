@@ -28,6 +28,7 @@ class $modify(MenuLayer){
 
         CCSprite* sticker;
         bool isCustomSticker = Mod::get()->getSettingValue<bool>("UseCustomSticker");
+        std::filesystem::path customStickerPath = Mod::get()->getSettingValue<std::filesystem::path>("CustomStickerPath");
 
         if (!isCustomSticker) {
             sticker = CCSprite::create(getSticker().c_str());
@@ -35,9 +36,11 @@ class $modify(MenuLayer){
             sticker->setID("doki-sticker"_spr);
             sticker->setPosition({director->getWinSize().width * (Mod::get()->getSettingValue<int64_t>("xPosPercent") / 100.f), director->getWinSize().height *(Mod::get()->getSettingValue<int64_t>("yPosPercent") / 100.f)});
             sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
-        } else {
+        } else if (!customStickerPath.string().empty() && std::filesystem::exists(customStickerPath)) { // make sure file exists and isnt equal to default (empty)
+            CCSprite* testSprite = CCSprite::create(customStickerPath.c_str());
+            if (!testSprite) { return; } // return if image is malformed/is not valid ccsprite
             CCImage* image = new CCImage();
-            image->initWithImageFile(Mod::get()->getSettingValue<std::filesystem::path>("CustomStickerPath").string().c_str());
+            image->initWithImageFile(customStickerPath.c_str());
 
             CCTexture2D* texture = new CCTexture2D();
             texture->initWithImage(image);
