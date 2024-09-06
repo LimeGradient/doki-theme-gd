@@ -37,7 +37,7 @@ class $modify(MenuLayer){
             sticker->setPosition({director->getWinSize().width * (Mod::get()->getSettingValue<int64_t>("xPosPercent") / 100.f), director->getWinSize().height *(Mod::get()->getSettingValue<int64_t>("yPosPercent") / 100.f)});
             sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
         } else if (!customStickerPath.string().empty() && std::filesystem::exists(customStickerPath)) { // make sure file exists and isnt equal to default (empty)
-            CCSprite* testSprite = CCSprite::create(customStickerPath.c_str());
+            CCSprite* testSprite = CCSprite::create(customStickerPath.string().c_str());
             if (!testSprite) return true; // return if image is malformed/is not valid ccsprite
             
             CCImage* image = new CCImage();
