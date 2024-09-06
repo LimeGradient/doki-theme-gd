@@ -1,4 +1,7 @@
 # v1.3.0
+* Added Custom Stickers!
+  * You can add the path to a sticker in settings
+  * Enable the custom stickers setting to use
 * Readded MacOS Support
 
 # v1.2.0
