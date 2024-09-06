@@ -1,6 +1,6 @@
-#include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include "Doki.h"
+
 using namespace geode::prelude;
 
 class $modify(MenuLayer){
@@ -30,7 +30,7 @@ class $modify(MenuLayer){
         bool isCustomSticker = Mod::get()->getSettingValue<bool>("UseCustomSticker");
 
         if (!isCustomSticker) {
-            sticker = CCSprite::createWithSpriteFrameName(getSticker().c_str());
+            sticker = CCSprite::create(getSticker().c_str());
             sticker->setOpacity(Mod::get()->getSettingValue<int64_t>("TransparencySliderLevel") * 5);
             sticker->setID("doki-sticker"_spr);
             sticker->setPosition({director->getWinSize().width * (Mod::get()->getSettingValue<int64_t>("xPosPercent") / 100.f), director->getWinSize().height *(Mod::get()->getSettingValue<int64_t>("yPosPercent") / 100.f)});

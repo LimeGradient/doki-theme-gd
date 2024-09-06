@@ -1,7 +1,5 @@
 #include <filesystem>
 
-#include <Geode/Geode.hpp>
-
 #include "Doki.h"
 
 CCNode *getDoki() {

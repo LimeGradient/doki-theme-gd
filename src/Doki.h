@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Geode/Geode.hpp>
 #include <Geode/modify/CCDirector.hpp>
 
 using namespace geode::prelude;

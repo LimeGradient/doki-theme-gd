@@ -1,4 +1,3 @@
-#include <Geode/Geode.hpp>
 #include <Geode/modify/LevelEditorLayer.hpp>
 #include "Doki.h"
 
@@ -23,7 +22,7 @@ class $modify(LevelEditorLayer) {
 
       if ( Mod::get() -> getSettingValue<bool>("ShowBackgroundInEditor")) {
         CCNode* mainNode = this -> getChildByID("EditorUI");
-        CCSprite* sticker = CCSprite::createWithSpriteFrameName(getBackground() . c_str());
+        CCSprite* sticker = CCSprite::create(getBackground() . c_str());
 
         sticker -> setPosition(ccp(mainNode -> getScaledContentSize()
                                             . width / 2.f, mainNode -> getScaledContentSize()

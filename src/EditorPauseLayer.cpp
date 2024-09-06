@@ -1,4 +1,3 @@
-#include <Geode/Geode.hpp>
 #include <Geode/modify/EditorPauseLayer.hpp>
 #include "Doki.h"
 
