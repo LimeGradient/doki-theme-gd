@@ -2,7 +2,8 @@
 	"geode": "3.4.0",
 	"gd": {
 		"android": "2.206",
-		"win": "2.206"
+		"win": "2.206",
+		"mac": "2.206"
 	},
 	"version": "v1.2.0",
 	"id": "limegradient.doki-theme-gd",
@@ -122,7 +123,7 @@
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
-			"version": ">=1.11.0",
+			"version": ">=1.13.0",
 			"importance": "required"
 		}
 	]
