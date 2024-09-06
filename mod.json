@@ -18,12 +18,10 @@
 		"source": "https://github.com/LimeGradient/doki-theme-gd"
 	},
 	"resources": {
-		"spritesheets": {
-			"StickerSheet": [
-				"resources/background/*.png",
-				"resources/stickers/*.png"
-			]
-		}
+		"sprites": [
+			"resources/background/*.png",
+			"resources/stickers/*.png"
+		]
 	},
 	"settings": {
 		"CustomStickerPath": {
@@ -107,7 +105,7 @@
 			"description": "Choose a level editor background from here. Backgrounds include:\n0: Fully transparent background (visually a softtoggle)\n1: Aqua, 2: Astolfo, 3: Asuna, 4: Azuki, 5: Beatrice, 6: Cinnamon, 7: Coconut, 8: Darkness, 9: Echidna\n10: Gray",
 			"type": "int",
 			"default": 1,
-			"min": 1,
+			"min": 0,
 			"max": 20,
 			"control": {
 				"slider": true,
