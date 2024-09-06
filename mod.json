@@ -5,7 +5,7 @@
 		"win": "2.206",
 		"mac": "2.206"
 	},
-	"version": "v1.2.0",
+	"version": "v1.3.0",
 	"id": "limegradient.doki-theme-gd",
 	"name": "Doki Theme",
 	"developers": [
@@ -26,6 +26,18 @@
 		}
 	},
 	"settings": {
+		"CustomStickerPath": {
+			"name": "Custom Sticker Path",
+			"description": "Choose a custom sticker to display",
+			"type": "path",
+			"default": ""
+		},
+		"UseCustomSticker": {
+			"name": "Use Custom Sticker",
+			"description": "Override the Sticker Slider and use a custom sticker",
+			"type": "bool",
+			"default": false
+		},
 		"StickerSlider": {
 			"name": "Sticker",
 			"description": "Choose a sticker from here. Stickers include:\n0: Fully transparent sticker (visually a softtoggle)\n1: Essex, 2: Sleepy Kanna, 3: Kanna, 4: Mai, 5: Ram\n6: Rem, 7: Rias, 8: Yuno, 9: Ryuko, 10: Nagatoro",

@@ -1,3 +1,5 @@
+#include <filesystem>
+
 #include <Geode/Geode.hpp>
 
 #include <Doki.h>
@@ -46,7 +48,8 @@ std::string getSticker() {
     case 8: return "yuno_dark.png"_spr;
     case 9: return "ryuko.png"_spr;
     case 10: return "nagatoro_dark.png"_spr;
-    case 11:return "reggie.png"_spr;
+    case 11: return "reggie.png"_spr;
+    case 12: return Mod::get()->getSettingValue<std::filesystem::path>("CustomStickerPath").string();
     default: return "blank.png"_spr;
   }
 }
