@@ -2,7 +2,7 @@
 
 #include <Geode/Geode.hpp>
 
-#include <Doki.h>
+#include "Doki.h"
 
 CCNode *getDoki() {
   return CCDirector::get()-> getRunningScene()->getChildByIDRecursive("doki-theme-gd"_spr);

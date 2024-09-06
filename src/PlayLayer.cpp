@@ -1,6 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PlayLayer.hpp>
-#include <Doki.h>
+#include "Doki.h"
 
 using namespace geode::prelude;
 

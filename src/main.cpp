@@ -1,7 +1,7 @@
 #include <Geode/Geode.hpp>
 
 #include <Geode/modify/CCDirector.hpp>
-#include <Doki.h>
+#include "Doki.h"
 
 using namespace geode::prelude;
 
