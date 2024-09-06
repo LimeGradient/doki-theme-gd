@@ -37,7 +37,7 @@ class $modify(MenuLayer){
             sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
         } else {
             CCImage* image = new CCImage();
-            image->initWithImageFile(Mod::get()->getSettingValue<std::filesystem::path>("CustomStickerPath").c_str());
+            image->initWithImageFile(Mod::get()->getSettingValue<std::filesystem::path>("CustomStickerPath").string().c_str());
 
             CCTexture2D* texture = new CCTexture2D();
             texture->initWithImage(image);
