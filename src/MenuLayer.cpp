@@ -38,7 +38,7 @@ class $modify(MenuLayer){
             sticker->setScale(Mod::get()->getSettingValue<double>("Scale"));
         } else if (!customStickerPath.string().empty() && std::filesystem::exists(customStickerPath)) { // make sure file exists and isnt equal to default (empty)
             CCSprite* testSprite = CCSprite::create(customStickerPath.c_str());
-            if (!testSprite) return; // return if image is malformed/is not valid ccsprite
+            if (!testSprite) return true; // return if image is malformed/is not valid ccsprite
             
             CCImage* image = new CCImage();
             image->initWithImageFile(customStickerPath.c_str());
@@ -56,7 +56,7 @@ class $modify(MenuLayer){
             texture->release();
         }
 
-        if (!sticker) return; // avoid crashes, pt2
+        if (!sticker) return true; // avoid crashes, pt2
 
         stickerNode->addChild(sticker);
         menu->addChild(stickerNode);
