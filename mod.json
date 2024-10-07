@@ -1,11 +1,11 @@
 {
-	"geode": "3.4.0",
+	"geode": "3.8.1",
 	"gd": {
 		"android": "2.206",
 		"win": "2.206",
 		"mac": "2.206"
 	},
-	"version": "v1.3.0",
+	"version": "v1.4.0",
 	"id": "limegradient.doki-theme-gd",
 	"name": "Doki Theme",
 	"developers": [
@@ -23,11 +23,21 @@
 			"resources/stickers/*.png"
 		]
 	},
-	"settings": {
+"settings": {
+		"custom-sticker-title": {
+			"type": "title",
+			"name": "Custom Stickers"
+		},
 		"CustomStickerPath": {
 			"name": "Custom Sticker Path",
 			"description": "Choose a custom sticker to display",
-			"type": "path",
+			"type": "file",
+			"default": ""
+		},
+		"CustomBackgroundPath": {
+			"name": "Custom Background Path",
+			"description": "Choose a background to display",
+			"type": "file",
 			"default": ""
 		},
 		"UseCustomSticker": {
@@ -36,19 +46,33 @@
 			"type": "bool",
 			"default": false
 		},
+		"UseCustomBackground": {
+			"name": "Use Custom Background",
+			"description": "Override the Background Slider and use a custom background",
+			"type": "bool",
+			"default": false
+		},
+		"built-in-stickers": {
+			"type": "title",
+			"name": "Built-In Stickers"
+		},
 		"StickerSlider": {
 			"name": "Sticker",
-			"description": "Choose a sticker from here. Stickers include:\n0: Fully transparent sticker (visually a softtoggle)\n1: Essex, 2: Sleepy Kanna, 3: Kanna, 4: Mai, 5: Ram\n6: Rem, 7: Rias, 8: Yuno, 9: Ryuko, 10: Nagatoro",
-			"type": "int",
-			"default": 1,
-			"min": 0,
-			"max": 11,
-			"control": {
-				"slider": true,
-				"input": false,
-				"arrows": true,
-				"arrow-step": 1
-			}
+			"description": "Choose a sticker from here.",
+			"type": "string",
+			"default": "Essex",
+			"one-of": ["Essex", "Sleepy Kanna", "Kanna", "Mai", "Nagatoro", "Ram", "Reggie", "Rem", "Rias", "Ryuko", "Yuno"]
+		},
+		"BackgroundSlider": {
+			"name": "Background (Editor Only)",
+			"description": "Choose a level editor background from here.",
+			"type": "string",
+			"default": "Aqua",
+			"one-of": ["Aqua", "Astolfo", "Asuna", "Azuki", "Beatrice", "Cinnamon", "Coconut", "Darkness", "Echidna", "Gray", "Rias", "Rin", "Ryuko", "Sayori", "Soma", "Tohru", "Umi", "V8 Girls", "Yuri", "Zero Two"]
+		},
+		"sticker-settings": {
+			"type": "title",
+			"name": "Sticker Settings"
 		},
 		"TransparencySliderLevel": {
 			"name": "Sticker Transparency",
@@ -100,20 +124,6 @@
 				"slider-step": 0.01
 			}
 		},
-		"BackgroundSlider": {
-			"name": "Background (Editor Only)",
-			"description": "Choose a level editor background from here. Backgrounds include:\n0: Fully transparent background (visually a softtoggle)\n1: Aqua, 2: Astolfo, 3: Asuna, 4: Azuki, 5: Beatrice, 6: Cinnamon, 7: Coconut, 8: Darkness, 9: Echidna\n10: Gray",
-			"type": "int",
-			"default": 1,
-			"min": 0,
-			"max": 20,
-			"control": {
-				"slider": true,
-				"input": false,
-				"arrows": true,
-				"arrow-step": 1
-			}
-		},
 		"TransparencySliderEditor": {
 			"name": "Background Transparency",
 			"type": "int",
@@ -128,6 +138,36 @@
 			"name": "Show Background in Editor",
 			"type": "bool",
 			"default": true
+		},
+		"BackgroundXPos": {
+			"name": "Background X Position",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 500,
+			"control": {
+				"slider": true
+			}
+		},
+		"BackgroundYPos": {
+			"name": "Background Y Position",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 500,
+			"control": {
+				"slider": true
+			}
+		},
+		"BackgroundScale": {
+			"name": "Background Scale",
+			"type": "float",
+			"default": 1,
+			"min": 1,
+			"max": 10,
+			"control": {
+				"slider": true
+			}
 		}
 	},
 	"dependencies": [

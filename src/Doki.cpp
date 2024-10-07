@@ -7,47 +7,44 @@ CCNode *getDoki() {
 }
 
 std::string getBackground() {
-  long long value = Mod::get() -> getSettingValue<int64_t>("BackgroundSlider");
-  switch ( value ) {
-    case 1: return "aqua_dark.png"_spr;
-    case 2: return "astolfo_dark.png"_spr;
-    case 3: return "asuna_dark.png"_spr;
-    case 4: return "azuki_dark.png"_spr;
-    case 5: return "beatrice.png"_spr;
-    case 6: return "cinnamon_dark.png"_spr;
-    case 7: return "coconut_dark.png"_spr;
-    case 8: return "darkness_dark.png"_spr;
-    case 9: return "echidna_dark.png"_spr;
-    case 10: return "gray_dark.png"_spr;
-    case 11: return "rias_dark.png"_spr;
-    case 12: return "rin_dark.png"_spr;
-    case 13: return "ryuko_light.png"_spr;
-    case 14: return "sayori_dark_normal.png"_spr;
-    case 15: return "soma_dark.png"_spr;
-    case 16: return "tohru_light.png"_spr;
-    case 17: return "umi_dark.png"_spr;
-    case 18: return "v8_girls.png"_spr;
-    case 19: return "yuri_joy.png"_spr;
-    case 20: return "zero_two_dark.png"_spr;
-    default: return "blank.png"_spr;
-  }
+  std::string value = Mod::get() -> getSettingValue<std::string>("BackgroundSlider");
+  if (value == "Aqua") return "aqua_dark.png"_spr;
+  if (value == "Astolfo") return "astolfo_dark.png"_spr;
+  if (value == "Asuna") return "asuna_dark.png"_spr;
+  if (value == "Azuki") return "azuki_dark.png"_spr;
+  if (value == "Beatrice") return "beatrice.png"_spr;
+  if (value == "Cinnamon") return "cinnamon_dark.png"_spr;
+  if (value == "Coconut") return "coconut_dark.png"_spr;
+  if (value == "Darkness") return "darkness_dark.png"_spr;
+  if (value == "Echidna") return "echidna_dark.png"_spr;
+  if (value == "Gray") return "gray_dark.png"_spr;
+  if (value == "Rias") return "rias_dark.png"_spr;
+  if (value == "Rin") return "rin_dark.png"_spr;
+  if (value == "Ryuko") return "ryuko_light.png"_spr;
+  if (value == "Sayori") return "sayori_dark_normal.png"_spr;
+  if (value == "Soma") return "soma_dark.png"_spr;
+  if (value == "Tohru") return "tohru_light.png"_spr;
+  if (value == "Umi") return "umi_dark.png"_spr;
+  if (value == "V8 Girls") return "v8_girls.png"_spr;
+  if (value == "Yuri") return "yuri_joy.png"_spr;
+  if (value == "Zero Two") return "zero_two_dark.png"_spr;
+
+  return "blank.png"_spr;
 }
 
 std::string getSticker() {
-  long long value = Mod::get() -> getSettingValue<int64_t>("StickerSlider");
-  switch ( value ) {
-    case 1: return "essex_dark.png"_spr;
-    case 2: return "kanna_dark_secondary.png"_spr;
-    case 3: return "kanna_dark.png"_spr;
-    case 4: return "mai_dark.png"_spr;
-    case 5: return "ram.png"_spr;
-    case 6: return "rem.png"_spr;
-    case 7: return "rias_dark.png"_spr;
-    case 8: return "yuno_dark.png"_spr;
-    case 9: return "ryuko.png"_spr;
-    case 10: return "nagatoro_dark.png"_spr;
-    case 11: return "reggie.png"_spr;
-    case 12: return Mod::get()->getSettingValue<std::filesystem::path>("CustomStickerPath").string();
-    default: return "blank.png"_spr;
-  }
+  std::string value = Mod::get() -> getSettingValue<std::string>("StickerSlider");
+  if (value == "Essex") return "essex_dark.png"_spr;
+  if (value == "Sleepy Kanna") return "kanna_dark_secondary.png"_spr;
+  if (value == "Kanna") return "kanna_dark.png"_spr;
+  if (value == "Mai") return "mai_dark.png"_spr;
+  if (value == "Ram") return "ram.png"_spr;
+  if (value == "Rem") return "rem.png"_spr;
+  if (value == "Rias") return "rias_dark.png"_spr;
+  if (value == "Yuno") return "yuno_dark.png"_spr;
+  if (value == "Ryuko") return "ryuko.png"_spr;
+  if (value == "Nagatoro") return "nagatoro_dark.png"_spr;
+  if (value == "Reggie") return "reggie.png"_spr;
+  
+  return "blank.png"_spr;
 }
