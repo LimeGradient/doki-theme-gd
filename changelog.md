@@ -1,3 +1,5 @@
+# v1.4.1
+* Ported to 2.2074
 # v1.4.0
 * Added Custom Backgrounds!
   * You can add backgrounds with the same process as stickers
