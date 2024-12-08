@@ -37,6 +37,7 @@ jobs:
         with:
           bindings: geode-sdk/bindings
           bindings-ref: main
+          gh-pat: ${{ secrets.GH_PAT }}
           combine: true
           target: ${{ matrix.config.target }}
 
