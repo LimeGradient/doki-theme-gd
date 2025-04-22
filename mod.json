@@ -1,11 +1,12 @@
 {
-	"geode": "4.0.0",
+	"geode": "4.3.1",
 	"gd": {
-		"android": "2.2074",
 		"win": "2.2074",
-		"mac": "2.2074"
+		"mac": "2.2074",
+		"ios": "2.2074",
+		"android": "2.2074"
 	},
-	"version": "v1.4.2",
+	"version": "v1.4.3",
 	"id": "limegradient.doki-theme-gd",
 	"name": "Doki Theme",
 	"developers": [
