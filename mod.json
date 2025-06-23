@@ -1,5 +1,5 @@
 {
-	"geode": "4.3.1",
+	"geode": "4.6.0",
 	"gd": {
 		"win": "2.2074",
 		"mac": "2.2074",
@@ -24,7 +24,7 @@
 			"resources/stickers/*.png"
 		]
 	},
-"settings": {
+	"settings": {
 		"custom-sticker-title": {
 			"type": "title",
 			"name": "Custom Stickers"
@@ -171,11 +171,7 @@
 			}
 		}
 	},
-	"dependencies": [
-		{
-			"id": "geode.node-ids",
-			"version": ">=1.13.0",
-			"importance": "required"
-		}
-	]
+	"dependencies": {
+		"geode.node-ids": ">=1.21.0"
+	}
 }

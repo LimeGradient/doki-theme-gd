@@ -1,3 +1,5 @@
+# v1.4.3
+* Added iOS support
 # v1.4.1
 * Ported to 2.2074
 # v1.4.0
