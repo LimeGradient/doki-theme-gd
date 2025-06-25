@@ -39,12 +39,8 @@ jobs:
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          bindings: geode-sdk/bindings
-          bindings-ref: main
           combine: true
           target: ${{ matrix.config.target }}
-          cli: nightly # remove once iOS finishes
-          sdk: nightly # remove once iOS finishes
 
   package:
     name: Package builds
@@ -54,8 +50,6 @@ jobs:
     steps:
       - uses: geode-sdk/build-geode-mod/combine@main
         id: build
-        with:
-          cli: nightly # remove once iOS finishes
 
       - uses: actions/upload-artifact@v4
         with:
