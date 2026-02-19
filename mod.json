@@ -1,0 +1,23 @@
+{
+	"geode": "5.0.0-beta.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "limegradient.doki-theme-gd",
+	"name": "doki-theme-gd",
+	"version": "v1.0.0",
+	"developers": [
+		"LimeGradient",
+		"RayDeeUx"
+	],
+	"links": {
+		"source": "https://github.com/LimeGradient/doki-theme-gd"
+	},
+	"description": "Adds anime characters to Geometry Dash!",
+	"dependencies": {
+		"geode.node-ids": ">=v1.20.0"
+	}
+}
